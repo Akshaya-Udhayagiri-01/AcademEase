@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AcademEase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video class="bg-video" autoplay loop muted playsinline>
+        <source src="C:\Users\aksha\OneDrive\Desktop\Projects\AcademEase\assets\lofi-bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <h2>Login</h2><br>
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Enter email" required>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p id="errorMsg" style="color: red;"></p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("http://localhost:5000/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+        console.log("📩 Full Response:", data); 
+        console.log("📌 Token:", data.token); 
+
+        if (response.ok && data.token) {
+            localStorage.setItem("token", data.token);  // ✅ Store token
+            console.log("✅ Token stored in local storage!");
+            window.location.href = "dashboard.html";   // ✅ Redirect
+        } else {
+            document.getElementById("errorMsg").textContent = data.msg || "Login failed!";
+        }
+    } catch (error) {
+        console.error("❌ Login Error:", error);
+        document.getElementById("errorMsg").textContent = "Something went wrong!";
+    }
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AcademEase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <video class="bg-video" autoplay loop muted playsinline>
+        <source src="C:\Users\aksha\OneDrive\Desktop\Projects\AcademEase\assets\lofi-bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="header">
+        <h2 class="welcome-text">Welcome to AcademEase - Learn, Share, Succeed.</h2>
+        <button id="logout" class="logout-btn">Logout</button>
+    </div>
+
+    <div class="dashboard">
+        <!-- Upload Section (Admins Only) -->
+        <div id="uploadSection" style="display: none;">
+            <h3>Upload Study Material</h3>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="text" id="titleInput" name="title" placeholder="Enter Title" required>
+                <input type="text" id="subjectInput" name="subject" placeholder="Enter Subject" required>
+                <input type="text" id="semesterInput" name="semester" placeholder="Enter Semester" required>
+                <input type="file" id="fileInput" name="file" required>
+                <button type="submit" id="uploadBtn">Upload</button>
+            </form>
+        </div>
+
+        <!-- Study Materials List -->
+        <div id="materialsListContainer">
+            <h3>Available Study Materials</h3><br>
+            <ul id="materialsList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

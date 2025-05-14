@@ -1,0 +1,233 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+  font-family: 'Fredoka One', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== 🌟 Lofi Background Video ===== */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* ===== ✨ Page Styling ===== */
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* ===== 📝 Login Form ===== */
+form {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+input {
+  display: block;
+  width: 250px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
+}
+
+input::placeholder {
+  color: black;
+}
+
+/* ===== 🎀 Buttons ===== */
+button {
+  background-color: #d998a0;  /* Soft dusty rose */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #b97c86; /* Muted mauve */
+  box-shadow: 0 0 12px rgba(185, 124, 134, 0.8);
+  transform: scale(1.05);
+}
+
+/* ===== 🏠 Dashboard Layout ===== */
+.dashboard {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+/* ===== 🖼️ Upload Section (For Admins) ===== */
+#uploadSection {
+  flex: 1;
+  background: rgba(217, 152, 160, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  max-width: 350px;
+}
+
+#uploadSection h3 {
+  color: #d998a0;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#uploadSection input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 14px;
+}
+
+#uploadBtn {
+  width: 100%;
+}
+
+/* ===== 📚 Materials List Section ===== */
+#materialsListContainer {
+  flex: 2;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+/* 🗂️ Study Materials Grid */
+#materialsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.material-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.material-card button {
+  width: 100%;
+}
+
+/* ===== 📌 Header Styling ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  width: 90%;
+}
+
+/* 💖 Welcome Text */
+.welcome-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffd3b6;
+  text-shadow: 2px 2px 8px rgba(255, 211, 182, 0.6);
+  letter-spacing: 1px;
+}
+
+/* 🚪 Logout Button */
+.logout-btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #ff6b6b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
+}
+
+.logout-btn:hover {
+  background: #ff8787;
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.8);
+  transform: scale(1.05);
+}
+
+/* ===== ✨ Floating Animation (For UI Elements) ===== */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.upload-section,
+.materials-list {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* ===== 🎭 Scrollbar Customization ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b6b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8787;
+}
+
+/* ===== 📂 File Input Styling ===== */
+input[type="file"] {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed #ff6b6b;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
